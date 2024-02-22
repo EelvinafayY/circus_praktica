@@ -1,0 +1,60 @@
+﻿<Page x:Class="circus_praktica.Pages.AdminHomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:circus_praktica.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminHomePage">
+
+    <Grid Background="#FFC7B6B6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="SurnameTB" Grid.Column="5" Grid.Row="0"
+                   HorizontalAlignment="Right" Text="{Binding Surname}" Foreground="#FFBF2A1B" FontFamily="Times New Roman" FontSize="15"></TextBlock>
+        <TextBlock x:Name="NameTB" Grid.Column="6" Grid.Row="0"
+                   HorizontalAlignment="Center" Text="{Binding Name}" Foreground="#FFBF2A1B" FontFamily="Times New Roman" FontSize="15"></TextBlock>
+        <TextBlock x:Name="PatronymicTB" Grid.Column="7" Grid.Row="0"
+                   HorizontalAlignment="Left" Text="{Binding Patronymic}" Foreground="#FFBF2A1B" FontFamily="Times New Roman" FontSize="15"></TextBlock>
+        <Button x:Name="RegBT" Grid.Column="2" Grid.ColumnSpan="4"
+            Grid.Row="2"
+            Content="Зарегистрировать"
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            Width="250" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="20" Foreground="AliceBlue" Click="RegBT_Click"></Button>
+        <Button x:Name="AddAnimalBT" Grid.Column="2" Grid.ColumnSpan="4"
+            Grid.Row="3"
+            Content="Добавить животное"
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            Width="250" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="20" Foreground="AliceBlue"></Button>
+        <Button x:Name="SheduleBT" Grid.Column="2" Grid.ColumnSpan="4"
+            Grid.Row="4"
+            Content="Расписание"
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            Width="250" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="20" Foreground="AliceBlue"></Button>
+        <Button x:Name="TasksBT" Grid.Column="2" Grid.ColumnSpan="4"
+            Grid.Row="5"
+            Content="Задания"
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            Width="250" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="20" Foreground="AliceBlue"></Button>
+        
+    </Grid>
+</Page>

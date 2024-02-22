@@ -1,0 +1,1154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище Circus_FayzullinaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admins">
+          <Key>
+            <PropertyRef Name="Id_Admin" />
+          </Key>
+          <Property Name="Id_Admin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
+          <Property Name="BDay" Type="date" />
+          <Property Name="Id_Gender" Type="int" />
+          <Property Name="Login" Type="nvarchar" MaxLength="10" />
+          <Property Name="Password" Type="nvarchar" MaxLength="10" />
+          <Property Name="Id_Role" Type="int" />
+        </EntityType>
+        <EntityType Name="Animal_trainer">
+          <Key>
+            <PropertyRef Name="Id_Animal_trainer" />
+          </Key>
+          <Property Name="Id_Animal_trainer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BDay" Type="date" />
+          <Property Name="Id_Gender" Type="int" />
+          <Property Name="Login" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_Role" Type="int" />
+        </EntityType>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="Kod_Application" />
+          </Key>
+          <Property Name="Kod_Application" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Artist" Type="int" />
+          <Property Name="Id_Admin" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Artist">
+          <Key>
+            <PropertyRef Name="Id_Artist" />
+          </Key>
+          <Property Name="Id_Artist" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
+          <Property Name="Id_Gender" Type="int" />
+          <Property Name="Login" Type="nvarchar" MaxLength="10" />
+          <Property Name="Password" Type="nvarchar" MaxLength="10" />
+          <Property Name="Id_Role" Type="int" />
+        </EntityType>
+        <EntityType Name="Cell">
+          <Key>
+            <PropertyRef Name="Id_Animal_Cell" />
+          </Key>
+          <Property Name="Id_Animal_Cell" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BDay" Type="date" />
+          <Property Name="Id_Gender" Type="int" />
+          <Property Name="Weight" Type="int" />
+          <Property Name="Food_Preferences" Type="nvarchar" MaxLength="300" />
+          <Property Name="Recommendations_for_care" Type="nvarchar" MaxLength="300" />
+          <Property Name="Id_Animal_trainer" Type="int" />
+        </EntityType>
+        <EntityType Name="Concert_Shedule">
+          <Key>
+            <PropertyRef Name="Id_Shedule" />
+          </Key>
+          <Property Name="Id_Shedule" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Artist" Type="int" />
+          <Property Name="Id_Perfomance" Type="int" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Time" Type="time" Precision="2" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="Id_Gender" />
+          </Key>
+          <Property Name="Id_Gender" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Perfomance">
+          <Key>
+            <PropertyRef Name="Id_Perfomence" />
+          </Key>
+          <Property Name="Id_Perfomence" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id_Role" />
+          </Key>
+          <Property Name="Id_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Id_Staff" />
+          </Key>
+          <Property Name="Id_Staff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
+          <Property Name="BDay" Type="date" />
+          <Property Name="Id_Gender" Type="int" />
+          <Property Name="Login" Type="nvarchar" MaxLength="10" />
+          <Property Name="Password" Type="nvarchar" MaxLength="10" />
+          <Property Name="Id_Role" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="Kod_Task" />
+          </Key>
+          <Property Name="Kod_Task" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Admin" Type="int" />
+          <Property Name="Id_Staff" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="Done" Type="bit" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Training_Schedule">
+          <Key>
+            <PropertyRef Name="Id_Shedule" />
+          </Key>
+          <Property Name="Id_Shedule" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Animal_Cell" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Time" Type="time" Precision="2" />
+          <Property Name="Done" Type="bit" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <Association Name="FK_Admin_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Admins">
+              <PropertyRef Name="Id_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Admin_Gender1">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Admins">
+              <PropertyRef Name="Id_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Admin_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Admins">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Admin_Role1">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Admins">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Animal_trainer_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Animal_trainer" Type="Self.Animal_trainer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Animal_trainer">
+              <PropertyRef Name="Id_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Animal_trainer_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Animal_trainer" Type="Self.Animal_trainer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Animal_trainer">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Application_Admin">
+          <End Role="Admins" Type="Self.Admins" Multiplicity="0..1" />
+          <End Role="Application" Type="Self.Application" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admins">
+              <PropertyRef Name="Id_Admin" />
+            </Principal>
+            <Dependent Role="Application">
+              <PropertyRef Name="Id_Admin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Application_Artist">
+          <End Role="Artist" Type="Self.Artist" Multiplicity="0..1" />
+          <End Role="Application" Type="Self.Application" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="Id_Artist" />
+            </Principal>
+            <Dependent Role="Application">
+              <PropertyRef Name="Id_Artist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Artist_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Artist" Type="Self.Artist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Artist">
+              <PropertyRef Name="Id_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Artist_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Artist" Type="Self.Artist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Artist">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cell_Animal_trainer">
+          <End Role="Animal_trainer" Type="Self.Animal_trainer" Multiplicity="0..1" />
+          <End Role="Cell" Type="Self.Cell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Animal_trainer">
+              <PropertyRef Name="Id_Animal_trainer" />
+            </Principal>
+            <Dependent Role="Cell">
+              <PropertyRef Name="Id_Animal_trainer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cell_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Cell" Type="Self.Cell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Cell">
+              <PropertyRef Name="Id_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Concert_Shedule_Artist">
+          <End Role="Artist" Type="Self.Artist" Multiplicity="0..1" />
+          <End Role="Concert_Shedule" Type="Self.Concert_Shedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="Id_Artist" />
+            </Principal>
+            <Dependent Role="Concert_Shedule">
+              <PropertyRef Name="Id_Artist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Concert_Shedule_Perfomance">
+          <End Role="Perfomance" Type="Self.Perfomance" Multiplicity="0..1" />
+          <End Role="Concert_Shedule" Type="Self.Concert_Shedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfomance">
+              <PropertyRef Name="Id_Perfomence" />
+            </Principal>
+            <Dependent Role="Concert_Shedule">
+              <PropertyRef Name="Id_Perfomance" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="Id_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tasks_Admin">
+          <End Role="Admins" Type="Self.Admins" Multiplicity="0..1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admins">
+              <PropertyRef Name="Id_Admin" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="Id_Admin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tasks_Staff">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="Id_Staff" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="Id_Staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Training_Schedule_Cell">
+          <End Role="Cell" Type="Self.Cell" Multiplicity="1" />
+          <End Role="Training_Schedule" Type="Self.Training_Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cell">
+              <PropertyRef Name="Id_Animal_Cell" />
+            </Principal>
+            <Dependent Role="Training_Schedule">
+              <PropertyRef Name="Id_Animal_Cell" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище Circus_FayzullinaModelContainer">
+          <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Animal_trainer" EntityType="Self.Animal_trainer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Artist" EntityType="Self.Artist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cell" EntityType="Self.Cell" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Concert_Shedule" EntityType="Self.Concert_Shedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Perfomance" EntityType="Self.Perfomance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Training_Schedule" EntityType="Self.Training_Schedule" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Admin_Gender" Association="Self.FK_Admin_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Admins" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Admin_Gender1" Association="Self.FK_Admin_Gender1">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Admins" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Admin_Role" Association="Self.FK_Admin_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Admins" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Admin_Role1" Association="Self.FK_Admin_Role1">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Admins" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Animal_trainer_Gender" Association="Self.FK_Animal_trainer_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Animal_trainer" EntitySet="Animal_trainer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Animal_trainer_Role" Association="Self.FK_Animal_trainer_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Animal_trainer" EntitySet="Animal_trainer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Application_Admin" Association="Self.FK_Application_Admin">
+            <End Role="Admins" EntitySet="Admins" />
+            <End Role="Application" EntitySet="Application" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Application_Artist" Association="Self.FK_Application_Artist">
+            <End Role="Artist" EntitySet="Artist" />
+            <End Role="Application" EntitySet="Application" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Artist_Gender" Association="Self.FK_Artist_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Artist" EntitySet="Artist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Artist_Role" Association="Self.FK_Artist_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Artist" EntitySet="Artist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cell_Animal_trainer" Association="Self.FK_Cell_Animal_trainer">
+            <End Role="Animal_trainer" EntitySet="Animal_trainer" />
+            <End Role="Cell" EntitySet="Cell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cell_Gender" Association="Self.FK_Cell_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Cell" EntitySet="Cell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Concert_Shedule_Artist" Association="Self.FK_Concert_Shedule_Artist">
+            <End Role="Artist" EntitySet="Artist" />
+            <End Role="Concert_Shedule" EntitySet="Concert_Shedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Concert_Shedule_Perfomance" Association="Self.FK_Concert_Shedule_Perfomance">
+            <End Role="Perfomance" EntitySet="Perfomance" />
+            <End Role="Concert_Shedule" EntitySet="Concert_Shedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Gender" Association="Self.FK_Staff_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Role" Association="Self.FK_Staff_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tasks_Admin" Association="Self.FK_Tasks_Admin">
+            <End Role="Admins" EntitySet="Admins" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tasks_Staff" Association="Self.FK_Tasks_Staff">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Training_Schedule_Cell" Association="Self.FK_Training_Schedule_Cell">
+            <End Role="Cell" EntitySet="Cell" />
+            <End Role="Training_Schedule" EntitySet="Training_Schedule" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Circus_FayzullinaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admins">
+          <Key>
+            <PropertyRef Name="Id_Admin" />
+          </Key>
+          <Property Name="Id_Admin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BDay" Type="DateTime" Precision="0" />
+          <Property Name="Id_Gender" Type="Int32" />
+          <Property Name="Login" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Role" Type="Int32" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK_Admin_Gender" FromRole="Admins" ToRole="Gender" />
+          <NavigationProperty Name="Gender1" Relationship="Self.FK_Admin_Gender1" FromRole="Admins" ToRole="Gender" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Admin_Role" FromRole="Admins" ToRole="Role" />
+          <NavigationProperty Name="Role1" Relationship="Self.FK_Admin_Role1" FromRole="Admins" ToRole="Role" />
+          <NavigationProperty Name="Application" Relationship="Self.FK_Application_Admin" FromRole="Admins" ToRole="Application" />
+          <NavigationProperty Name="Tasks" Relationship="Self.FK_Tasks_Admin" FromRole="Admins" ToRole="Tasks" />
+        </EntityType>
+        <EntityType Name="Animal_trainer">
+          <Key>
+            <PropertyRef Name="Id_Animal_trainer" />
+          </Key>
+          <Property Name="Id_Animal_trainer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BDay" Type="DateTime" Precision="0" />
+          <Property Name="Id_Gender" Type="Int32" />
+          <Property Name="Login" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id_Role" Type="Int32" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK_Animal_trainer_Gender" FromRole="Animal_trainer" ToRole="Gender" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Animal_trainer_Role" FromRole="Animal_trainer" ToRole="Role" />
+          <NavigationProperty Name="Cell" Relationship="Self.FK_Cell_Animal_trainer" FromRole="Animal_trainer" ToRole="Cell" />
+        </EntityType>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="Kod_Application" />
+          </Key>
+          <Property Name="Kod_Application" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Artist" Type="Int32" />
+          <Property Name="Id_Admin" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Admins" Relationship="Self.FK_Application_Admin" FromRole="Application" ToRole="Admins" />
+          <NavigationProperty Name="Artist" Relationship="Self.FK_Application_Artist" FromRole="Application" ToRole="Artist" />
+        </EntityType>
+        <EntityType Name="Artist">
+          <Key>
+            <PropertyRef Name="Id_Artist" />
+          </Key>
+          <Property Name="Id_Artist" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Gender" Type="Int32" />
+          <Property Name="Login" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Role" Type="Int32" />
+          <NavigationProperty Name="Application" Relationship="Self.FK_Application_Artist" FromRole="Artist" ToRole="Application" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK_Artist_Gender" FromRole="Artist" ToRole="Gender" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Artist_Role" FromRole="Artist" ToRole="Role" />
+          <NavigationProperty Name="Concert_Shedule" Relationship="Self.FK_Concert_Shedule_Artist" FromRole="Artist" ToRole="Concert_Shedule" />
+        </EntityType>
+        <EntityType Name="Cell">
+          <Key>
+            <PropertyRef Name="Id_Animal_Cell" />
+          </Key>
+          <Property Name="Id_Animal_Cell" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BDay" Type="DateTime" Precision="0" />
+          <Property Name="Id_Gender" Type="Int32" />
+          <Property Name="Weight" Type="Int32" />
+          <Property Name="Food_Preferences" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Recommendations_for_care" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Animal_trainer" Type="Int32" />
+          <NavigationProperty Name="Animal_trainer" Relationship="Self.FK_Cell_Animal_trainer" FromRole="Cell" ToRole="Animal_trainer" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK_Cell_Gender" FromRole="Cell" ToRole="Gender" />
+          <NavigationProperty Name="Training_Schedule" Relationship="Self.FK_Training_Schedule_Cell" FromRole="Cell" ToRole="Training_Schedule" />
+        </EntityType>
+        <EntityType Name="Concert_Shedule">
+          <Key>
+            <PropertyRef Name="Id_Shedule" />
+          </Key>
+          <Property Name="Id_Shedule" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Artist" Type="Int32" />
+          <Property Name="Id_Perfomance" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Time" Type="Time" Precision="2" />
+          <NavigationProperty Name="Artist" Relationship="Self.FK_Concert_Shedule_Artist" FromRole="Concert_Shedule" ToRole="Artist" />
+          <NavigationProperty Name="Perfomance" Relationship="Self.FK_Concert_Shedule_Perfomance" FromRole="Concert_Shedule" ToRole="Perfomance" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="Id_Gender" />
+          </Key>
+          <Property Name="Id_Gender" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Admins" Relationship="Self.FK_Admin_Gender" FromRole="Gender" ToRole="Admins" />
+          <NavigationProperty Name="Admins1" Relationship="Self.FK_Admin_Gender1" FromRole="Gender" ToRole="Admins" />
+          <NavigationProperty Name="Animal_trainer" Relationship="Self.FK_Animal_trainer_Gender" FromRole="Gender" ToRole="Animal_trainer" />
+          <NavigationProperty Name="Artist" Relationship="Self.FK_Artist_Gender" FromRole="Gender" ToRole="Artist" />
+          <NavigationProperty Name="Cell" Relationship="Self.FK_Cell_Gender" FromRole="Gender" ToRole="Cell" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK_Staff_Gender" FromRole="Gender" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Perfomance">
+          <Key>
+            <PropertyRef Name="Id_Perfomence" />
+          </Key>
+          <Property Name="Id_Perfomence" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Concert_Shedule" Relationship="Self.FK_Concert_Shedule_Perfomance" FromRole="Perfomance" ToRole="Concert_Shedule" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id_Role" />
+          </Key>
+          <Property Name="Id_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Admins" Relationship="Self.FK_Admin_Role" FromRole="Role" ToRole="Admins" />
+          <NavigationProperty Name="Admins1" Relationship="Self.FK_Admin_Role1" FromRole="Role" ToRole="Admins" />
+          <NavigationProperty Name="Animal_trainer" Relationship="Self.FK_Animal_trainer_Role" FromRole="Role" ToRole="Animal_trainer" />
+          <NavigationProperty Name="Artist" Relationship="Self.FK_Artist_Role" FromRole="Role" ToRole="Artist" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK_Staff_Role" FromRole="Role" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Id_Staff" />
+          </Key>
+          <Property Name="Id_Staff" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BDay" Type="DateTime" Precision="0" />
+          <Property Name="Id_Gender" Type="Int32" />
+          <Property Name="Login" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Id_Role" Type="Int32" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK_Staff_Gender" FromRole="Staff" ToRole="Gender" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_Staff_Role" FromRole="Staff" ToRole="Role" />
+          <NavigationProperty Name="Tasks" Relationship="Self.FK_Tasks_Staff" FromRole="Staff" ToRole="Tasks" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="Kod_Task" />
+          </Key>
+          <Property Name="Kod_Task" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Admin" Type="Int32" />
+          <Property Name="Id_Staff" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Done" Type="Boolean" />
+          <Property Name="Comment" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Admins" Relationship="Self.FK_Tasks_Admin" FromRole="Tasks" ToRole="Admins" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK_Tasks_Staff" FromRole="Tasks" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Training_Schedule">
+          <Key>
+            <PropertyRef Name="Id_Shedule" />
+          </Key>
+          <Property Name="Id_Shedule" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Animal_Cell" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Time" Type="Time" Precision="2" />
+          <Property Name="Done" Type="Boolean" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cell" Relationship="Self.FK_Training_Schedule_Cell" FromRole="Training_Schedule" ToRole="Cell" />
+        </EntityType>
+        <Association Name="FK_Admin_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Admins">
+              <PropertyRef Name="Id_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Admin_Gender1">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Admins">
+              <PropertyRef Name="Id_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Admin_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Admins">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Admin_Role1">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Admins">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Application_Admin">
+          <End Role="Admins" Type="Self.Admins" Multiplicity="0..1" />
+          <End Role="Application" Type="Self.Application" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admins">
+              <PropertyRef Name="Id_Admin" />
+            </Principal>
+            <Dependent Role="Application">
+              <PropertyRef Name="Id_Admin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tasks_Admin">
+          <End Role="Admins" Type="Self.Admins" Multiplicity="0..1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admins">
+              <PropertyRef Name="Id_Admin" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="Id_Admin" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Animal_trainer_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Animal_trainer" Type="Self.Animal_trainer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Animal_trainer">
+              <PropertyRef Name="Id_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Animal_trainer_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Animal_trainer" Type="Self.Animal_trainer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Animal_trainer">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cell_Animal_trainer">
+          <End Role="Animal_trainer" Type="Self.Animal_trainer" Multiplicity="0..1" />
+          <End Role="Cell" Type="Self.Cell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Animal_trainer">
+              <PropertyRef Name="Id_Animal_trainer" />
+            </Principal>
+            <Dependent Role="Cell">
+              <PropertyRef Name="Id_Animal_trainer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Application_Artist">
+          <End Role="Artist" Type="Self.Artist" Multiplicity="0..1" />
+          <End Role="Application" Type="Self.Application" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="Id_Artist" />
+            </Principal>
+            <Dependent Role="Application">
+              <PropertyRef Name="Id_Artist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Artist_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Artist" Type="Self.Artist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Artist">
+              <PropertyRef Name="Id_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Artist_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Artist" Type="Self.Artist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Artist">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Concert_Shedule_Artist">
+          <End Role="Artist" Type="Self.Artist" Multiplicity="0..1" />
+          <End Role="Concert_Shedule" Type="Self.Concert_Shedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="Id_Artist" />
+            </Principal>
+            <Dependent Role="Concert_Shedule">
+              <PropertyRef Name="Id_Artist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cell_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Cell" Type="Self.Cell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Cell">
+              <PropertyRef Name="Id_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Training_Schedule_Cell">
+          <End Role="Cell" Type="Self.Cell" Multiplicity="1" />
+          <End Role="Training_Schedule" Type="Self.Training_Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cell">
+              <PropertyRef Name="Id_Animal_Cell" />
+            </Principal>
+            <Dependent Role="Training_Schedule">
+              <PropertyRef Name="Id_Animal_Cell" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Concert_Shedule_Perfomance">
+          <End Role="Perfomance" Type="Self.Perfomance" Multiplicity="0..1" />
+          <End Role="Concert_Shedule" Type="Self.Concert_Shedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfomance">
+              <PropertyRef Name="Id_Perfomence" />
+            </Principal>
+            <Dependent Role="Concert_Shedule">
+              <PropertyRef Name="Id_Perfomance" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id_Gender" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="Id_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id_Role" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="Id_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tasks_Staff">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="Id_Staff" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="Id_Staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Circus_FayzullinaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="Self.Admins" />
+          <EntitySet Name="Animal_trainer" EntityType="Self.Animal_trainer" />
+          <EntitySet Name="Application" EntityType="Self.Application" />
+          <EntitySet Name="Artist" EntityType="Self.Artist" />
+          <EntitySet Name="Cell" EntityType="Self.Cell" />
+          <EntitySet Name="Concert_Shedule" EntityType="Self.Concert_Shedule" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" />
+          <EntitySet Name="Perfomance" EntityType="Self.Perfomance" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Tasks" EntityType="Self.Tasks" />
+          <EntitySet Name="Training_Schedule" EntityType="Self.Training_Schedule" />
+          <AssociationSet Name="FK_Admin_Gender" Association="Self.FK_Admin_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Admins" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Admin_Gender1" Association="Self.FK_Admin_Gender1">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Admins" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Admin_Role" Association="Self.FK_Admin_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Admins" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Admin_Role1" Association="Self.FK_Admin_Role1">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Admins" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Application_Admin" Association="Self.FK_Application_Admin">
+            <End Role="Admins" EntitySet="Admins" />
+            <End Role="Application" EntitySet="Application" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tasks_Admin" Association="Self.FK_Tasks_Admin">
+            <End Role="Admins" EntitySet="Admins" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Animal_trainer_Gender" Association="Self.FK_Animal_trainer_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Animal_trainer" EntitySet="Animal_trainer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Animal_trainer_Role" Association="Self.FK_Animal_trainer_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Animal_trainer" EntitySet="Animal_trainer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cell_Animal_trainer" Association="Self.FK_Cell_Animal_trainer">
+            <End Role="Animal_trainer" EntitySet="Animal_trainer" />
+            <End Role="Cell" EntitySet="Cell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Application_Artist" Association="Self.FK_Application_Artist">
+            <End Role="Artist" EntitySet="Artist" />
+            <End Role="Application" EntitySet="Application" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Artist_Gender" Association="Self.FK_Artist_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Artist" EntitySet="Artist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Artist_Role" Association="Self.FK_Artist_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Artist" EntitySet="Artist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Concert_Shedule_Artist" Association="Self.FK_Concert_Shedule_Artist">
+            <End Role="Artist" EntitySet="Artist" />
+            <End Role="Concert_Shedule" EntitySet="Concert_Shedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cell_Gender" Association="Self.FK_Cell_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Cell" EntitySet="Cell" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Training_Schedule_Cell" Association="Self.FK_Training_Schedule_Cell">
+            <End Role="Cell" EntitySet="Cell" />
+            <End Role="Training_Schedule" EntitySet="Training_Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Concert_Shedule_Perfomance" Association="Self.FK_Concert_Shedule_Perfomance">
+            <End Role="Perfomance" EntitySet="Perfomance" />
+            <End Role="Concert_Shedule" EntitySet="Concert_Shedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Gender" Association="Self.FK_Staff_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Role" Association="Self.FK_Staff_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tasks_Staff" Association="Self.FK_Tasks_Staff">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Circus_FayzullinaModelContainer" CdmEntityContainer="Circus_FayzullinaEntities">
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="Circus_FayzullinaModel.Admins">
+              <MappingFragment StoreEntitySet="Admins">
+                <ScalarProperty Name="Id_Admin" ColumnName="Id_Admin" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="BDay" ColumnName="BDay" />
+                <ScalarProperty Name="Id_Gender" ColumnName="Id_Gender" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Animal_trainer">
+            <EntityTypeMapping TypeName="Circus_FayzullinaModel.Animal_trainer">
+              <MappingFragment StoreEntitySet="Animal_trainer">
+                <ScalarProperty Name="Id_Animal_trainer" ColumnName="Id_Animal_trainer" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="BDay" ColumnName="BDay" />
+                <ScalarProperty Name="Id_Gender" ColumnName="Id_Gender" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Application">
+            <EntityTypeMapping TypeName="Circus_FayzullinaModel.Application">
+              <MappingFragment StoreEntitySet="Application">
+                <ScalarProperty Name="Kod_Application" ColumnName="Kod_Application" />
+                <ScalarProperty Name="Id_Artist" ColumnName="Id_Artist" />
+                <ScalarProperty Name="Id_Admin" ColumnName="Id_Admin" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Artist">
+            <EntityTypeMapping TypeName="Circus_FayzullinaModel.Artist">
+              <MappingFragment StoreEntitySet="Artist">
+                <ScalarProperty Name="Id_Artist" ColumnName="Id_Artist" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Id_Gender" ColumnName="Id_Gender" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cell">
+            <EntityTypeMapping TypeName="Circus_FayzullinaModel.Cell">
+              <MappingFragment StoreEntitySet="Cell">
+                <ScalarProperty Name="Id_Animal_Cell" ColumnName="Id_Animal_Cell" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BDay" ColumnName="BDay" />
+                <ScalarProperty Name="Id_Gender" ColumnName="Id_Gender" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Food_Preferences" ColumnName="Food_Preferences" />
+                <ScalarProperty Name="Recommendations_for_care" ColumnName="Recommendations_for_care" />
+                <ScalarProperty Name="Id_Animal_trainer" ColumnName="Id_Animal_trainer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Concert_Shedule">
+            <EntityTypeMapping TypeName="Circus_FayzullinaModel.Concert_Shedule">
+              <MappingFragment StoreEntitySet="Concert_Shedule">
+                <ScalarProperty Name="Id_Shedule" ColumnName="Id_Shedule" />
+                <ScalarProperty Name="Id_Artist" ColumnName="Id_Artist" />
+                <ScalarProperty Name="Id_Perfomance" ColumnName="Id_Perfomance" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gender">
+            <EntityTypeMapping TypeName="Circus_FayzullinaModel.Gender">
+              <MappingFragment StoreEntitySet="Gender">
+                <ScalarProperty Name="Id_Gender" ColumnName="Id_Gender" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfomance">
+            <EntityTypeMapping TypeName="Circus_FayzullinaModel.Perfomance">
+              <MappingFragment StoreEntitySet="Perfomance">
+                <ScalarProperty Name="Id_Perfomence" ColumnName="Id_Perfomence" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="Circus_FayzullinaModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staff">
+            <EntityTypeMapping TypeName="Circus_FayzullinaModel.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="Id_Staff" ColumnName="Id_Staff" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="BDay" ColumnName="BDay" />
+                <ScalarProperty Name="Id_Gender" ColumnName="Id_Gender" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Circus_FayzullinaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tasks">
+            <EntityTypeMapping TypeName="Circus_FayzullinaModel.Tasks">
+              <MappingFragment StoreEntitySet="Tasks">
+                <ScalarProperty Name="Kod_Task" ColumnName="Kod_Task" />
+                <ScalarProperty Name="Id_Admin" ColumnName="Id_Admin" />
+                <ScalarProperty Name="Id_Staff" ColumnName="Id_Staff" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Done" ColumnName="Done" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Training_Schedule">
+            <EntityTypeMapping TypeName="Circus_FayzullinaModel.Training_Schedule">
+              <MappingFragment StoreEntitySet="Training_Schedule">
+                <ScalarProperty Name="Id_Shedule" ColumnName="Id_Shedule" />
+                <ScalarProperty Name="Id_Animal_Cell" ColumnName="Id_Animal_Cell" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Done" ColumnName="Done" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
