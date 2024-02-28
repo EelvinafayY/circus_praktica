@@ -44,7 +44,7 @@
             Grid.Row="3"
             Content="Добавить животное"
             HorizontalAlignment="Center" VerticalAlignment="Center"
-            Width="250" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="20" Foreground="AliceBlue"></Button>
+            Width="250" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="20" Foreground="AliceBlue" Click="AddAnimalBT_Click"></Button>
         <Button x:Name="SheduleBT" Grid.Column="2" Grid.ColumnSpan="4"
             Grid.Row="4"
             Content="Расписание"

@@ -33,5 +33,10 @@ namespace circus_praktica.Pages
         {
             NavigationService.Navigate(new RegPage());
         }
+
+        private void AddAnimalBT_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddAnimalPage());
+        }
     }
 }
