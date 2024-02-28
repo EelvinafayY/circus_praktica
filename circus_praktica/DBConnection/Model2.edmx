@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Circus_FayzullinaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище Circus_FayzullinaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="IDAdmin" />
@@ -122,6 +122,7 @@
           <Property Name="Description" Type="nvarchar" MaxLength="100" />
           <Property Name="Done" Type="bit" />
           <Property Name="Comment" Type="nvarchar" MaxLength="100" />
+          <Property Name="Viewed" Type="bit" />
         </EntityType>
         <EntityType Name="Worker">
           <Key>
@@ -407,8 +408,7 @@
             <End Role="Worker" EntitySet="Worker" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Circus_FayzullinaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -558,6 +558,7 @@
           <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Admin" Relationship="Self.FK_Task_Admin" FromRole="Task" ToRole="Admin" />
           <NavigationProperty Name="Worker" Relationship="Self.FK_Task_Worker" FromRole="Task" ToRole="Worker" />
+          <Property Name="Viewed" Type="Boolean" />
         </EntityType>
         <EntityType Name="Worker">
           <Key>
@@ -972,6 +973,7 @@
           <EntitySetMapping Name="Task">
             <EntityTypeMapping TypeName="Circus_FayzullinaModel.Task">
               <MappingFragment StoreEntitySet="Task">
+                <ScalarProperty Name="Viewed" ColumnName="Viewed" />
                 <ScalarProperty Name="IDTask" ColumnName="IDTask" />
                 <ScalarProperty Name="IDAdmin" ColumnName="IDAdmin" />
                 <ScalarProperty Name="IDWorker" ColumnName="IDWorker" />

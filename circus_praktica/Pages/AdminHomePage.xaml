@@ -49,12 +49,12 @@
             Grid.Row="4"
             Content="Расписание"
             HorizontalAlignment="Center" VerticalAlignment="Center"
-            Width="250" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="20" Foreground="AliceBlue"></Button>
+            Width="250" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="20" Foreground="AliceBlue" Click="SheduleBT_Click"></Button>
         <Button x:Name="TasksBT" Grid.Column="2" Grid.ColumnSpan="4"
             Grid.Row="5"
             Content="Задания"
             HorizontalAlignment="Center" VerticalAlignment="Center"
-            Width="250" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="20" Foreground="AliceBlue"></Button>
+            Width="250" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="20" Foreground="AliceBlue" Click="TasksBT_Click"></Button>
         
     </Grid>
 </Page>
