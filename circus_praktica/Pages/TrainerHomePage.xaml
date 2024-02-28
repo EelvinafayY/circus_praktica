@@ -8,7 +8,91 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TrainerHomePage">
 
-    <Grid>
-        
+    <Grid Background="#FFC7B6B6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ListView x:Name="SheduleLV"
+                  Grid.Column="1" Grid.ColumnSpan="6"
+                  Grid.Row="2" Grid.RowSpan="3">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Животное" Width="150">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Cell.Name}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        
+
+                        <GridViewColumn Header="Дата" Width="150">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Date}"></TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Описание" Width="190" x:Name="Comment" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox x:Name="CommentTB" Text="{Binding Description}"></TextBox>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Выполнено" Width="110">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <RadioButton IsChecked="{Binding Done}" Click="RadioButton_Click"></RadioButton>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="AddBT" Grid.Column="3" Grid.ColumnSpan="2"
+Grid.Row="6"
+Content="Добавить"
+HorizontalAlignment="Center" VerticalAlignment="Center"
+Width="150" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="18" Foreground="AliceBlue" Click="AddBT_Click"/>
+
+        <TextBlock Grid.Column ="0"
+   Grid.Row="1" Text="Животное"
+   HorizontalAlignment="Center" VerticalAlignment="Center"
+   FontSize="18" Foreground="#FFBF2A1B" FontWeight="Bold" FontFamily="Times New Roman">
+        </TextBlock>
+        <ComboBox x:Name="ArtistCB" Grid.Column ="1" Grid.ColumnSpan ="2"
+   Grid.Row="1" 
+   HorizontalAlignment="Center" VerticalAlignment="Center"
+   FontSize="18" Foreground="#FFBF2A1B"
+ Width="180" ItemsSource="{Binding cells}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
     </Grid>
 </Page>

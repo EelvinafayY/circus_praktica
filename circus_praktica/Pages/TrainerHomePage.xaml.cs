@@ -24,5 +24,10 @@ namespace circus_praktica.Pages
         {
             InitializeComponent();
         }
+
+        private void RadioButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
