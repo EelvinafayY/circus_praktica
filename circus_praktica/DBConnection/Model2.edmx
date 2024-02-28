@@ -41,6 +41,7 @@
           <Property Name="IDAdmin" Type="int" />
           <Property Name="IDArtist" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="Done" Type="bit" />
         </EntityType>
         <EntityType Name="Artist">
           <Key>
@@ -456,6 +457,7 @@
           <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Admin" Relationship="Self.FK_Application_Admin" FromRole="Application" ToRole="Admin" />
           <NavigationProperty Name="Artist" Relationship="Self.FK_Application_Artist" FromRole="Application" ToRole="Artist" />
+          <Property Name="Done" Type="Boolean" />
         </EntityType>
         <EntityType Name="Artist">
           <Key>
@@ -886,6 +888,7 @@
           <EntitySetMapping Name="Application">
             <EntityTypeMapping TypeName="Circus_FayzullinaModel.Application">
               <MappingFragment StoreEntitySet="Application">
+                <ScalarProperty Name="Done" ColumnName="Done" />
                 <ScalarProperty Name="IDApplication" ColumnName="IDApplication" />
                 <ScalarProperty Name="IDAdmin" ColumnName="IDAdmin" />
                 <ScalarProperty Name="IDArtist" ColumnName="IDArtist" />

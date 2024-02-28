@@ -144,6 +144,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ApplicationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ArtistHomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AuhorizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,6 +165,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ShedulePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ViewAppPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ViewTasksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WorkerHomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -174,6 +194,12 @@
     <Compile Include="Pages\AdminHomePage.xaml.cs">
       <DependentUpon>AdminHomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ApplicationPage.xaml.cs">
+      <DependentUpon>ApplicationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ArtistHomePage.xaml.cs">
+      <DependentUpon>ArtistHomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AuhorizationPage.xaml.cs">
       <DependentUpon>AuhorizationPage.xaml</DependentUpon>
     </Compile>
@@ -185,6 +211,15 @@
     </Compile>
     <Compile Include="Pages\ShedulePage.xaml.cs">
       <DependentUpon>ShedulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewAppPage.xaml.cs">
+      <DependentUpon>ViewAppPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewTasksPage.xaml.cs">
+      <DependentUpon>ViewTasksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WorkerHomePage.xaml.cs">
+      <DependentUpon>WorkerHomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

@@ -57,7 +57,7 @@ namespace circus_praktica.Pages
             }
             if (currentArtist != null)
             {
-
+                NavigationService.Navigate(new ArtistHomePage(currentArtist));
             }
             if (currentTrainer != null)
             {
@@ -65,7 +65,7 @@ namespace circus_praktica.Pages
             }
             if (currentWorker != null)
             {
-
+                NavigationService.Navigate(new WorkerHomePage());
             }
             if(currentAdmin == null && currentArtist == null && currentTrainer == null && currentWorker == null )
             {

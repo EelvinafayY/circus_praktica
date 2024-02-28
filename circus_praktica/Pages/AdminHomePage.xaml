@@ -55,6 +55,19 @@
             Content="Задания"
             HorizontalAlignment="Center" VerticalAlignment="Center"
             Width="250" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="20" Foreground="AliceBlue" Click="TasksBT_Click"></Button>
-        
+
+
+
+        <Button x:Name="AppBT" Grid.Column="0" Grid.ColumnSpan="3"
+    Grid.Row="0"
+    Content="Заявки"
+    HorizontalAlignment="Center" VerticalAlignment="Center"
+    Width="200" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="15" Foreground="AliceBlue" Click="AppBT_Click"></Button>
+        <Button x:Name="TaskBT" Grid.Column="3" Grid.ColumnSpan="3"
+Grid.Row="0"
+Content="Ответы"
+HorizontalAlignment="Center" VerticalAlignment="Center"
+Width="200" Height="35" Background="#FFBF2A1B" FontFamily="Times New Roman" FontSize="15" Foreground="AliceBlue" Click="TaskBT_Click"></Button>
+
     </Grid>
 </Page>

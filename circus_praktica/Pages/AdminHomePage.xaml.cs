@@ -48,5 +48,15 @@ namespace circus_praktica.Pages
         {
             NavigationService.Navigate(new ShedulePage());
         }
+
+        private void AppBT_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ViewAppPage());
+        }
+
+        private void TaskBT_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ViewTasksPage());
+        }
     }
 }
