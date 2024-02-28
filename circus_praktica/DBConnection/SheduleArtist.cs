@@ -12,12 +12,15 @@ namespace circus_praktica.DBConnection
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class SheduleArtist
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int IDSheduleArtist { get; set; }
+        public Nullable<int> IDPerfomance { get; set; }
+        public Nullable<int> IDArtist { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<System.TimeSpan> Time { get; set; }
+    
+        public virtual Artist Artist { get; set; }
+        public virtual Perfomance Perfomance { get; set; }
     }
 }

@@ -14,12 +14,12 @@ namespace circus_praktica.DBConnection
     
     public partial class Application
     {
-        public int Kod_Application { get; set; }
-        public Nullable<int> Id_Artist { get; set; }
-        public Nullable<int> Id_Admin { get; set; }
+        public int IDApplication { get; set; }
+        public Nullable<int> IDAdmin { get; set; }
+        public Nullable<int> IDArtist { get; set; }
         public string Description { get; set; }
     
-        public virtual Admins Admins { get; set; }
+        public virtual Admin Admin { get; set; }
         public virtual Artist Artist { get; set; }
     }
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="81c2e9450c4f4da89064f2a8c6ab17a6" Name="Diagram1">
+        <EntityTypeShape EntityType="Circus_FayzullinaModel.Admin" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_FayzullinaModel.AnimalTrainer" Width="1.5" PointX="6" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_FayzullinaModel.Application" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_FayzullinaModel.Artist" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_FayzullinaModel.Cell" Width="1.5" PointX="3" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_FayzullinaModel.Gender" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_FayzullinaModel.Perfomance" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_FayzullinaModel.Role" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_FayzullinaModel.SheduleArtist" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_FayzullinaModel.SheduleTrainers" Width="1.5" PointX="5.25" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_FayzullinaModel.Task" Width="1.5" PointX="8.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_FayzullinaModel.Worker" Width="1.5" PointX="6" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_Admin_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_Admin_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_Application_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_Task_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_AnimalTrainer_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_AnimalTrainer_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_Application_Artist" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_Artist_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_Artist_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_Concert_Artist" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_Cell_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_SheduleTrainers_Cell" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_Worker_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_Concert_Perfomance" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_Worker_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_FayzullinaModel.FK_Task_Worker" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

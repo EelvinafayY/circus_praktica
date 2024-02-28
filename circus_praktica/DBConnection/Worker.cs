@@ -12,32 +12,27 @@ namespace circus_praktica.DBConnection
     using System;
     using System.Collections.Generic;
     
-    public partial class Admins
+    public partial class Worker
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Admins()
+        public Worker()
         {
-            this.Application = new HashSet<Application>();
-            this.Tasks = new HashSet<Tasks>();
+            this.Task = new HashSet<Task>();
         }
     
-        public int Id_Admin { get; set; }
+        public int IDWorker { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Patronymic { get; set; }
-        public Nullable<System.DateTime> BDay { get; set; }
-        public Nullable<int> Id_Gender { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
+        public Nullable<int> IDRole { get; set; }
+        public Nullable<int> IDGender { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public Nullable<int> Id_Role { get; set; }
     
         public virtual Gender Gender { get; set; }
-        public virtual Gender Gender1 { get; set; }
         public virtual Role Role { get; set; }
-        public virtual Role Role1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Application> Application { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tasks> Tasks { get; set; }
+        public virtual ICollection<Task> Task { get; set; }
     }
 }

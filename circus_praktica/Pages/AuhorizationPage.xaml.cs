@@ -21,10 +21,10 @@ namespace circus_praktica.Pages
     /// </summary>
     public partial class AuhorizationPage : Page
     {
-        public static List<Admins> admins { get; set; }
+        public static List<Admin> Admin { get; set; }
         public static List<Artist> artists { get; set; }
-        public static List<Animal_trainer> trainers { get; set; }
-        public static List<Staff> staffs { get; set; }
+        public static List<AnimalTrainer> trainers { get; set; }
+        public static List<Worker> Workers { get; set; }
         public AuhorizationPage()
         {
             InitializeComponent();
@@ -36,21 +36,21 @@ namespace circus_praktica.Pages
             string password = PasswordPB.Password.Trim();
 
 
-            admins = new List<Admins>(DBConnection.dbconnection.Circus.Admins.ToList());
-            Admins currentAdmin = admins.FirstOrDefault(i => i.Login == login && i.Password == password);
+            Admin = new List<Admin>(DBConnection.dbconnection.Circus.Admin.ToList());
+            Admin currentAdmin = Admin.FirstOrDefault(i => i.Login == login && i.Password == password);
             dbconnection.loginedAdmin = currentAdmin;
 
             artists = new List<Artist>(DBConnection.dbconnection.Circus.Artist.ToList());
             Artist currentArtist = artists.FirstOrDefault(i => i.Login == login && i.Password == password);
             dbconnection.loginedArtist = currentArtist;
 
-            trainers = new List<Animal_trainer>(DBConnection.dbconnection.Circus.Animal_trainer.ToList());
-            Animal_trainer currentTrainer = trainers.FirstOrDefault(i => i.Login == login && i.Password == password);
+            trainers = new List<AnimalTrainer>(DBConnection.dbconnection.Circus.AnimalTrainer.ToList());
+            AnimalTrainer currentTrainer = trainers.FirstOrDefault(i => i.Login == login && i.Password == password);
             dbconnection.loginedAnimal_trainer = currentTrainer;
 
-            staffs = new List<Staff>(DBConnection.dbconnection.Circus.Staff.ToList());
-            Staff currentStaff = staffs.FirstOrDefault(i => i.Login == login && i.Password == password);
-            dbconnection.loginedStaff = currentStaff;
+            Workers = new List<Worker>(DBConnection.dbconnection.Circus.Worker.ToList());
+            Worker currentWorker = Workers.FirstOrDefault(i => i.Login == login && i.Password == password);
+            dbconnection.loginedStaff = currentWorker;
             if (currentAdmin != null)
             {
                 NavigationService.Navigate(new AdminHomePage());
@@ -63,11 +63,11 @@ namespace circus_praktica.Pages
             {
 
             }
-            if (currentStaff != null)
+            if (currentWorker != null)
             {
 
             }
-            if(currentAdmin == null && currentArtist == null && currentTrainer == null && currentStaff == null )
+            if(currentAdmin == null && currentArtist == null && currentTrainer == null && currentWorker == null )
             {
                 MessageBox.Show("Такого пользователя не существует(((");
             }

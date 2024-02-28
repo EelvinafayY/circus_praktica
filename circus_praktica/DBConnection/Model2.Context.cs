@@ -13,10 +13,10 @@ namespace circus_praktica.DBConnection
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Circus_FayzullinaEntities : DbContext
+    public partial class Circus_FayEntities : DbContext
     {
-        public Circus_FayzullinaEntities()
-            : base("name=Circus_FayzullinaEntities")
+        public Circus_FayEntities()
+            : base("name=Circus_FayEntities")
         {
         }
     
@@ -25,18 +25,17 @@ namespace circus_praktica.DBConnection
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Admins> Admins { get; set; }
-        public virtual DbSet<Animal_trainer> Animal_trainer { get; set; }
+        public virtual DbSet<Admin> Admin { get; set; }
+        public virtual DbSet<AnimalTrainer> AnimalTrainer { get; set; }
         public virtual DbSet<Application> Application { get; set; }
         public virtual DbSet<Artist> Artist { get; set; }
         public virtual DbSet<Cell> Cell { get; set; }
-        public virtual DbSet<Concert_Shedule> Concert_Shedule { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<Perfomance> Perfomance { get; set; }
         public virtual DbSet<Role> Role { get; set; }
-        public virtual DbSet<Staff> Staff { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Tasks> Tasks { get; set; }
-        public virtual DbSet<Training_Schedule> Training_Schedule { get; set; }
+        public virtual DbSet<SheduleArtist> SheduleArtist { get; set; }
+        public virtual DbSet<SheduleTrainers> SheduleTrainers { get; set; }
+        public virtual DbSet<Task> Task { get; set; }
+        public virtual DbSet<Worker> Worker { get; set; }
     }
 }

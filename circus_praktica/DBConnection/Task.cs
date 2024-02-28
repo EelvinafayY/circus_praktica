@@ -12,15 +12,16 @@ namespace circus_praktica.DBConnection
     using System;
     using System.Collections.Generic;
     
-    public partial class Training_Schedule
+    public partial class Task
     {
-        public int Id_Shedule { get; set; }
-        public int Id_Animal_Cell { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<System.TimeSpan> Time { get; set; }
-        public Nullable<bool> Done { get; set; }
+        public int IDTask { get; set; }
+        public Nullable<int> IDAdmin { get; set; }
+        public Nullable<int> IDWorker { get; set; }
         public string Description { get; set; }
+        public Nullable<bool> Done { get; set; }
+        public string Comment { get; set; }
     
-        public virtual Cell Cell { get; set; }
+        public virtual Admin Admin { get; set; }
+        public virtual Worker Worker { get; set; }
     }
 }

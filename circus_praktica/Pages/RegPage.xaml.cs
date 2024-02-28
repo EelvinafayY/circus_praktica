@@ -22,14 +22,14 @@ namespace circus_praktica.Pages
     public partial class RegPage : Page
     {
         public static List<Gender> genders { get; set; }
-        public static List<Admins> admins { get; set; }
+        public static List<Admin> Admin { get; set; }
         public static List<Artist> artists { get; set; }
-        public static List<Animal_trainer> trainers { get; set; }
-        public static List<Staff> staffs { get; set; }
-        public static Admins adm = new Admins();
+        public static List<AnimalTrainer> trainers { get; set; }
+        public static List<Worker> Workers { get; set; }
+        public static Admin adm = new Admin();
         public static Artist art = new Artist();
-        public static Animal_trainer trainer = new Animal_trainer();
-        public static Staff st = new Staff();
+        public static AnimalTrainer trainer = new AnimalTrainer();
+        public static Worker st = new Worker();
         public RegPage()
         {
             InitializeComponent();
@@ -47,20 +47,20 @@ namespace circus_praktica.Pages
                 adm.Surname = SurnameTB.Text.Trim();
                 adm.Name = NameTB.Text.Trim();
                 adm.Patronymic = PatronymicTB.Text.Trim();
-                adm.BDay = BDayDP.SelectedDate;
-                adm.Id_Gender = b.Id_Gender;
-                adm.Id_Role = a.Id_Role;
+                adm.DateOfBirth = BDayDP.SelectedDate;
+                adm.IDGender = b.IDGender;
+                adm.IDRole = a.IDRole;
                 adm.Login = LoginTB.Text.Trim();
                 adm.Password = PasswordTB.Text.Trim();
-                dbconnection.Circus.Admins.Add(adm);
+                dbconnection.Circus.Admin.Add(adm);
             }
             if (RoleCB.Text == "Артист")
             {
                 art.Surname = SurnameTB.Text.Trim();
                 art.Name = NameTB.Text.Trim();
                 art.Patronymic = PatronymicTB.Text.Trim();
-                art.Id_Gender = b.Id_Gender;
-                art.Id_Role = a.Id_Role;
+                art.IDGender = b.IDGender;
+                art.IDRole = a.IDRole;
                 art.Login = LoginTB.Text.Trim();
                 art.Password = PasswordTB.Text.Trim();
                 dbconnection.Circus.Artist.Add(art);
@@ -70,26 +70,27 @@ namespace circus_praktica.Pages
                 trainer.Surname = SurnameTB.Text.Trim();
                 trainer.Name = NameTB.Text.Trim();
                 trainer.Patronymic = PatronymicTB.Text.Trim();
-                trainer.BDay = BDayDP.SelectedDate;
-                trainer.Id_Gender = b.Id_Gender;
-                trainer.Id_Role = a.Id_Role;
+                trainer.DateOfBirth = BDayDP.SelectedDate;
+                trainer.IDGender = b.IDGender;
+                trainer.IDRole = a.IDRole;
                 trainer.Login = LoginTB.Text.Trim();
                 trainer.Password = PasswordTB.Text.Trim();
-                dbconnection.Circus.Animal_trainer.Add(trainer);
+                dbconnection.Circus.AnimalTrainer.Add(trainer);
             }
             if (RoleCB.Text == "Обслуж. персонал")
             {
                 st.Surname = SurnameTB.Text.Trim();
                 st.Name = NameTB.Text.Trim();
                 st.Patronymic = PatronymicTB.Text.Trim();
-                st.BDay = BDayDP.SelectedDate;
-                st.Id_Gender = b.Id_Gender;
-                st.Id_Role = a.Id_Role;
+                st.DateOfBirth = BDayDP.SelectedDate;
+                st.IDGender = b.IDGender;
+                st.IDRole = a.IDRole;
                 st.Login = LoginTB.Text.Trim();
                 st.Password = PasswordTB.Text.Trim();
-                dbconnection.Circus.Staff.Add(st);
+                dbconnection.Circus.Worker.Add(st);
+                DBConnection.dbconnection.Circus.SaveChanges();
             }
-            dbconnection.Circus.SaveChanges();
+           
         }
     }
 }

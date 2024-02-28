@@ -12,15 +12,19 @@ namespace circus_praktica.DBConnection
     using System;
     using System.Collections.Generic;
     
-    public partial class Concert_Shedule
+    public partial class AnimalTrainer
     {
-        public int Id_Shedule { get; set; }
-        public Nullable<int> Id_Artist { get; set; }
-        public Nullable<int> Id_Perfomance { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<System.TimeSpan> Time { get; set; }
+        public int IDAnimalTrainer { get; set; }
+        public string Surname { get; set; }
+        public string Name { get; set; }
+        public string Patronymic { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
+        public int IDRole { get; set; }
+        public int IDGender { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
     
-        public virtual Artist Artist { get; set; }
-        public virtual Perfomance Perfomance { get; set; }
+        public virtual Gender Gender { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

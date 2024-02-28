@@ -17,25 +17,22 @@ namespace circus_praktica.DBConnection
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Role()
         {
-            this.Admins = new HashSet<Admins>();
-            this.Admins1 = new HashSet<Admins>();
-            this.Animal_trainer = new HashSet<Animal_trainer>();
+            this.Admin = new HashSet<Admin>();
+            this.AnimalTrainer = new HashSet<AnimalTrainer>();
             this.Artist = new HashSet<Artist>();
-            this.Staff = new HashSet<Staff>();
+            this.Worker = new HashSet<Worker>();
         }
     
-        public int Id_Role { get; set; }
+        public int IDRole { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Admins> Admins { get; set; }
+        public virtual ICollection<Admin> Admin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Admins> Admins1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Animal_trainer> Animal_trainer { get; set; }
+        public virtual ICollection<AnimalTrainer> AnimalTrainer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Artist> Artist { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Staff> Staff { get; set; }
+        public virtual ICollection<Worker> Worker { get; set; }
     }
 }

@@ -12,27 +12,30 @@ namespace circus_praktica.DBConnection
     using System;
     using System.Collections.Generic;
     
-    public partial class Animal_trainer
+    public partial class Admin
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Animal_trainer()
+        public Admin()
         {
-            this.Cell = new HashSet<Cell>();
+            this.Application = new HashSet<Application>();
+            this.Task = new HashSet<Task>();
         }
     
-        public int Id_Animal_trainer { get; set; }
+        public int IDAdmin { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Patronymic { get; set; }
-        public Nullable<System.DateTime> BDay { get; set; }
-        public Nullable<int> Id_Gender { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
+        public int IDRole { get; set; }
+        public int IDGender { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public Nullable<int> Id_Role { get; set; }
     
         public virtual Gender Gender { get; set; }
         public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cell> Cell { get; set; }
+        public virtual ICollection<Application> Application { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Task> Task { get; set; }
     }
 }

@@ -18,23 +18,24 @@ namespace circus_praktica.DBConnection
         public Artist()
         {
             this.Application = new HashSet<Application>();
-            this.Concert_Shedule = new HashSet<Concert_Shedule>();
+            this.SheduleArtist = new HashSet<SheduleArtist>();
         }
     
-        public int Id_Artist { get; set; }
+        public int IDArtist { get; set; }
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Patronymic { get; set; }
-        public Nullable<int> Id_Gender { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
+        public Nullable<int> IDRole { get; set; }
+        public Nullable<int> IDGender { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public Nullable<int> Id_Role { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Application> Application { get; set; }
         public virtual Gender Gender { get; set; }
         public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Concert_Shedule> Concert_Shedule { get; set; }
+        public virtual ICollection<SheduleArtist> SheduleArtist { get; set; }
     }
 }

@@ -8,10 +8,10 @@ namespace circus_praktica.DBConnection
 {
     class dbconnection
     {
-        public static Circus_FayzullinaEntities Circus = new Circus_FayzullinaEntities();
-        public static Admins loginedAdmin;
+        public static Circus_FayEntities Circus = new Circus_FayEntities();
+        public static Admin loginedAdmin;
         public static Artist loginedArtist;
-        public static Staff loginedStaff;
-        public static Animal_trainer loginedAnimal_trainer;
+        public static Worker loginedStaff;
+        public static AnimalTrainer loginedAnimal_trainer;
     }
 }

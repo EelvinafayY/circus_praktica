@@ -17,21 +17,20 @@ namespace circus_praktica.DBConnection
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Cell()
         {
-            this.Training_Schedule = new HashSet<Training_Schedule>();
+            this.SheduleTrainers = new HashSet<SheduleTrainers>();
         }
     
-        public int Id_Animal_Cell { get; set; }
+        public int IDCellAnimal { get; set; }
         public string Name { get; set; }
-        public Nullable<System.DateTime> BDay { get; set; }
-        public Nullable<int> Id_Gender { get; set; }
+        public Nullable<System.DateTime> AgeDate { get; set; }
+        public Nullable<int> IDGender { get; set; }
         public Nullable<int> Weight { get; set; }
-        public string Food_Preferences { get; set; }
-        public string Recommendations_for_care { get; set; }
-        public Nullable<int> Id_Animal_trainer { get; set; }
+        public string FoodPreferences { get; set; }
+        public string Recommendations { get; set; }
+        public Nullable<int> IDAnimalTrainer { get; set; }
     
-        public virtual Animal_trainer Animal_trainer { get; set; }
         public virtual Gender Gender { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Training_Schedule> Training_Schedule { get; set; }
+        public virtual ICollection<SheduleTrainers> SheduleTrainers { get; set; }
     }
 }

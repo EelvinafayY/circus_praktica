@@ -17,14 +17,14 @@ namespace circus_praktica.DBConnection
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Perfomance()
         {
-            this.Concert_Shedule = new HashSet<Concert_Shedule>();
+            this.SheduleArtist = new HashSet<SheduleArtist>();
         }
     
-        public int Id_Perfomence { get; set; }
+        public int IDPerfomance { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Concert_Shedule> Concert_Shedule { get; set; }
+        public virtual ICollection<SheduleArtist> SheduleArtist { get; set; }
     }
 }

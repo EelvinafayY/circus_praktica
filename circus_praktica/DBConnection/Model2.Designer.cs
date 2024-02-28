@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\202122\source\repos\circus_praktica\circus_praktica\DBConnection\Model1.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\user\Documents\GitHub\circus_praktica\circus_praktica\DBConnection\Model2.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

@@ -21,7 +21,7 @@ namespace circus_praktica.Pages
     /// </summary>
     public partial class AdminHomePage : Page
     {
-        public static Admins loggedAdmin;
+        public static Admin loggedAdmin;
         public AdminHomePage()
         {
             InitializeComponent();
