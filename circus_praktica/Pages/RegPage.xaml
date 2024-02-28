@@ -72,9 +72,12 @@
                Grid.Row="5" 
                HorizontalAlignment="Center" VerticalAlignment="Center"
                FontSize="18" Foreground="#FFBF2A1B"
-             Width="180">
-            <TextBlock Text="Мужской"></TextBlock>
-            <TextBlock Text="Женский"></TextBlock>
+             Width="180" ItemsSource="{Binding genders}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
         <TextBlock Grid.Column ="0"
                Grid.Row="6" Text="Должность"
@@ -85,11 +88,12 @@
                Grid.Row="6" 
                HorizontalAlignment="Center" VerticalAlignment="Center"
                FontSize="18" Foreground="#FFBF2A1B"
-             Width="180">
-            <ComboBoxItem Content="Администратор"></ComboBoxItem>
-            <ComboBoxItem Content="Артист"></ComboBoxItem>
-            <ComboBoxItem Content="Тренер"></ComboBoxItem>
-            <ComboBoxItem Content="Обслуж. персонал"></ComboBoxItem>
+             Width="180" ItemsSource="{Binding roles}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
 
 
